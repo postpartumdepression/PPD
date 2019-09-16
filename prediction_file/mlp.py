@@ -330,6 +330,7 @@ print('the brier socre is',brier_score_loss(ycdrn, y_pred_proba_crf))
 
 #cdrn18
 dfcdrn18 = pd.read_csv('/Users/bu/Documents/WCMC/PPD/ppdmodel1907/data/modelfile/cdrn/cdrnnew18.csv', delimiter=',', header=0)
+dfcdrn18 = pd.merge(dfcdrn18,visitexafter1y,on = ['person_id','condition_start_date'], how='right')
 df2cdrn18 = pd.DataFrame(dfcdrn18, columns=columnsmlp)
 df2cdrn18[np.isnan(df2cdrn18)] = '0'
 
@@ -348,22 +349,22 @@ print('the auc of random forest is:', roc_auc_score(ycdrn, y_pred_proba_crf))
 print('the brier socre is',brier_score_loss(ycdrn, y_pred_proba_crf))
 
 #confmat_test:
-# [[60247  4798]
-# [  743  1150]]
-#the acc is: 0.9172219068391646
+# [[46153  4271]
+# [  740  1149]]
+#the acc is: 0.9042111903350983
 #the classification_report:              precision    recall  f1-score   support
 #
-#        0.0       0.99      0.93      0.96     65045
-#        1.0       0.19      0.61      0.29      1893
+#        0.0       0.98      0.92      0.95     50424
+#        1.0       0.21      0.61      0.31      1889
 #
-#avg / total       0.97      0.92      0.94     66938
+#avg / total       0.96      0.90      0.93     52313
 #
-#the auc of random forest is: 0.8990098406820393
-#the brier socre is 0.0671240280767486
-
+#the auc of random forest is: 0.8894200105288204
+#the brier socre is 0.07765915128720047
 
 #cdrn12
 dfcdrn12 = pd.read_csv('/Users/bu/Documents/WCMC/PPD/ppdmodel1907/data/modelfile/cdrn/cdrnnew12.csv', delimiter=',', header=0)
+dfcdrn12 = pd.merge(dfcdrn12,visitexafter1y,on = ['person_id','condition_start_date'], how='right')
 df2cdrn12 = pd.DataFrame(dfcdrn12, columns=columnsmlp)
 df2cdrn12[np.isnan(df2cdrn12)] = '0'
 
@@ -382,16 +383,15 @@ print('the auc of random forest is:', roc_auc_score(ycdrn, y_pred_proba_crf))
 print('the brier socre is',brier_score_loss(ycdrn, y_pred_proba_crf))
 
 #confmat_test:
-# [[60311  4734]
-# [  754  1139]]
-#the acc is: 0.9180136843048792
+# [[46180  4244]
+# [  749  1140]]
+#the acc is: 0.9045552730678799
 #the classification_report:              precision    recall  f1-score   support
 #
-#        0.0       0.99      0.93      0.96     65045
-#        1.0       0.19      0.60      0.29      1893
+#        0.0       0.98      0.92      0.95     50424
+#        1.0       0.21      0.60      0.31      1889
 #
-#avg / total       0.97      0.92      0.94     66938
+#avg / total       0.96      0.90      0.93     52313
 #
-#the auc of random forest is: 0.8980938833154518
-#the brier socre is 0.06691526590283346
-
+#the auc of random forest is: 0.8898847933630804
+#the brier socre is 0.07717522738710982
