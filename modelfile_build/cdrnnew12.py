@@ -299,7 +299,7 @@ condition = pd.merge(deliverygw4,condition,on = ['person_id'], how='inner')
 condition['diffcondition'] = pd.to_datetime(condition['condition_start_date']) - pd.to_datetime(condition['condition_date'])
 condition['diffcondition'] = condition['diffcondition'].dt.days
 
-condition = condition[(280 - condition['diffcondition']) <= 126 ]
+condition = condition[(280 - condition['diffcondition']) <= 84 ]
 condition = condition[(280 - condition['diffcondition']) >= 0 ]
 
 condition = condition.drop_duplicates(subset=['person_id','condition_start_date','concept_name'], keep='first')
@@ -338,7 +338,7 @@ medication2 = pd.merge(deliverygw4,medication2,on = ['person_id'], how='inner')
 medication2['diffmedication'] = pd.to_datetime(medication2['condition_start_date']) - pd.to_datetime(medication2['drug_exposure_start_date_y'])
 medication2['diffmedication'] = medication2['diffmedication'].dt.days
 
-medication2 = medication2[(280 - medication2['diffmedication']) <= 126 ]
+medication2 = medication2[(280 - medication2['diffmedication']) <= 84 ]
 medication2 = medication2[(280 - medication2['diffmedication']) >= 0 ]
 
 medication2 = medication2.drop_duplicates(subset=['person_id','drug_exposure_start_date_y','concept_name'], keep='first')
