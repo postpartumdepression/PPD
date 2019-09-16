@@ -523,15 +523,15 @@ print('the auc of logistics is:', roc_auc_score(ycdrn12, y_pred_proba_cdtcdrn))
 print('the brier socre is',brier_score_loss(ycdrn12, y_pred_proba_cdtcdrn))
 
 # confmat_test:
-#  [[42862  7562]
-#  [  245  1644]]
-# the acc is: 0.8507636725097012
+#  [[42804  7620]
+#  [  240  1649]]
+# the acc is: 0.8497505400187334
 # the classification_report:               precision    recall  f1-score   support
 #          0.0       0.99      0.85      0.92     50424
 #          1.0       0.18      0.87      0.30      1889
 #    micro avg       0.85      0.85      0.85     52313
 #    macro avg       0.59      0.86      0.61     52313
 # weighted avg       0.96      0.85      0.89     52313
-# the auc of logistics is: 0.8708206394948184
-# the brier socre is 0.15020906565275843
+# the auc of logistics is: 0.8695501900369778
+# the brier socre is 0.1507527847967182
 
