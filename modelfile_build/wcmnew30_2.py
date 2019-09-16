@@ -646,15 +646,6 @@ wcmmodelhistory = pd.merge(wcmmodel,history,on = ['person_id','condition_start_d
 #print(wcmmodelhistory.isnull().sum())
 wcmmodelhistory['ppd'].value_counts()
 
-num_cols = cdrnmodelhistory[['edvisitcount']]
-scaler = StandardScaler()
-num_cols = scaler.fit_transform(num_cols)
-normalize = pd.DataFrame(num_cols)
-normalize.rename(columns={0:'edvisitcount'}, 
-                 inplace=True)
-cdrnmodelhistory['edvisitcount'] = normalize['edvisitcount']
-
-
 wcmmodelhistory.to_csv('/Users/bu/Documents/WCMC/PPD/ppdmodel1907/data/modelfile/wcm/wcmmodel30_2.csv', sep=',',index=0)
 
 
