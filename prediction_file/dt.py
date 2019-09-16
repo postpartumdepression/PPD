@@ -482,9 +482,9 @@ print('the brier socre is',brier_score_loss(ycdrn12, y_pred_proba_cdtcdrn))
 
 
 #confmat_test:
-# [[42764  7660]
-# [  242  1647]]
-#the acc is: 0.8489476803089099
+# [[42740  7684]
+# [  239  1650]]
+#the acc is: 0.848546250453998
 #the classification_report:              precision    recall  f1-score   support
 #
 #        0.0       0.99      0.85      0.92     50424
@@ -492,9 +492,8 @@ print('the brier socre is',brier_score_loss(ycdrn12, y_pred_proba_cdtcdrn))
 #
 #avg / total       0.96      0.85      0.89     52313
 #
-#the auc of dt is: 0.8706270245995272
-#the brier socre is 0.1533434795505184
-
+#the auc of dt is: 0.8716471563072095
+#the brier socre is 0.14850290366915442
 
 
 
