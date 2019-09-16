@@ -567,19 +567,19 @@ print('the auc of random forest is:', roc_auc_score(ycdrn12, y_pred_proba_crf))
 print('the brier socre is',brier_score_loss(ycdrn12, y_pred_proba_crf))
 #without history
 #confmat_test:
-# [[42839  7585]
-# [  256  1633]]
-#the acc is: 0.8501137384588917
-#the classification_report:             
-#                precision    recall  f1-score   support
+# [[42871  7553]
+# [  258  1631]]
+#the acc is: 0.8506872096801942
+#the classification_report:              precision    recall  f1-score   support
 #
 #        0.0       0.99      0.85      0.92     50424
 #        1.0       0.18      0.86      0.29      1889
 #
 #avg / total       0.96      0.85      0.89     52313
 #
-#the auc of random forest is: 0.8736966794740998
-#the brier socre is 0.15513175746490296
+#the auc of random forest is: 0.8758205221206434
+#the brier socre is 0.15482587165056932
+
 
 
 
