@@ -619,6 +619,15 @@ if __name__ == "__main__":
 history = pd.DataFrame(new_deliverygw4, columns=['person_id','condition_start_date',"anxiety", "mooddisorder", "organicdisorders", "otherdisorder", "personalitydisorder", "schizophrenic", "substance"])
 history = history.fillna(0)
 cdrnmodelhistory = pd.merge(cdrnmodel,history,on = ['person_id','condition_start_date'], how='left')
+
+num_cols = cdrnmodelhistory[['edvisitcount']]
+scaler = StandardScaler()
+num_cols = scaler.fit_transform(num_cols)
+normalize = pd.DataFrame(num_cols)
+normalize.rename(columns={0:'edvisitcount'}, 
+                 inplace=True)
+cdrnmodelhistory['edvisitcount'] = normalize['edvisitcount']
+
 cdrnmodelhistory.to_csv('/Users/bu/Documents/WCMC/PPD/ppdmodel1907/data/modelfile/cdrn/cdrnnew12.csv', sep=',',index=0)
 
 
